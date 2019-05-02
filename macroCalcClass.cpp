@@ -73,8 +73,8 @@ cin>>userSelection; //gets the users choice
 switch(userSelection){
 
 case 1:CalcFoodCal();break;
-case 2:break;
-case 3:break;
+case 2:CalcMaintenance();break;
+case 3:LoseWeight();break;
 case 4:break;
 case 5:break;
 
@@ -186,6 +186,7 @@ int CalcFoodCal()
 } //end CalcFoodCal
 
 void CalcMaintenance(){
+    system("clear");
 
     float weight=0.0f;
     float caloricMaintLow=0.0;
@@ -202,24 +203,24 @@ void CalcMaintenance(){
     cout<<"Please enter your weight in lbs."<<endl;
 
     cin>>weight;
+    system("clear");
 
     caloricMaintLow=weight*14;
     caloricMaintHigh=weight*17;
 
-    cout<<endl<<endl<<"Your esimated daily Calorie intake is "<<((caloricMaintHigh+caloricMaintLow)/2)<<" Calories"<<endl;
+    cout<<endl<<endl<<"Your esimated daily Calorie intake is "<<((caloricMaintHigh+caloricMaintLow)/2)<<" Calories"<<endl<<endl;
 
     cout<<"This is the amount of Calories you need to intake daily to remain in your current state of health."<<endl;
     cout<<"Also, a good rule of thumb is split the total amount of Calories you need to consume into "<<endl;
-    cout<<"40% protein, 40% Carbohydrates, and 20% fat. "<<endl;
+    cout<<"40% protein, 40% Carbohydrates, and 20% fat. "<<endl<<endl;
 
 
     cout<<"Press 1 to go back to the Menu."<<endl;
     cout<<"Press 2 to try maintenance calculation."<<endl;
     cout<<"Press 3 to Exit the program."<<endl;
-    cin>>userSelection;
 
     while(validAns==false)
-{
+    {
     cin>>userSelection;
 
     if(userSelection==1)
@@ -230,9 +231,13 @@ void CalcMaintenance(){
     else if(userSelection==2)
     {
         validAns=true;
+        CalcMaintenance();
+        
 
-        exit(0);
-
+    }
+    else if(userSelection==3)
+    {
+            exit(0);
     }
     else
     {
@@ -247,8 +252,51 @@ void CalcMaintenance(){
 void LoseWeight()
 {
 
+    bool validAns=false;
+    int userSelection=0;
+    system("clear");
+
+    cout<<"The path to weight loss/leaning out starts primarily in the kitchen. It's essential you are eating MOSTLY healthy foods."<<endl;
+    cout<<"MOSTLY is bolded because a mess up here and there will not destroy a consistent healthy diet, you still need to enjoy yourself once in a while."<<endl<<endl;
+    cout<<"Exercise is the next most important component. You must burn calories through rigorous activity, meaning you should be sweating"<<endl;
+    cout<<"significantly for at least 30-45 minutes of activity."<<endl;
+
+    cout<<"Once you get into a routine and you still don't see any change in weight for a few weeks, then it's time to start adjusting your Calorie intake"<<endl;
+    cout<<"Start by reducing your total Calorie intake by as little as 300-400 calories to start with. Continue with your exercise routine and monitor weekly progress."<<endl<<endl;
+    cout<<"Any weight loss over 1-2 pounds weekly is UNHEALTHY. (*other than the first 2 weeks of exercising because this is just water weight)"<<endl;
+    cout<<"Continue to monitor and change what's necessary, decrease calories or increase exercise."<<endl<<endl;
+    cout<<"When you decrease Calories, pull from your CARBOHYDRATES first and then small amounts from FAT or PROTEIN but do not drastically reduce any single one!!"<<endl;
+    cout<<"Remember, losing weight is a marathon, not a sprint. It takes time so find enjoyment in the pursuit and enjoy a healthier lifestyle :)"<<endl<<endl;
+
+
+    cout<<"Press 1 to go back to the Menu."<<endl;
+    cout<<"Press 2 to Exit."<<endl;
+
+    while(validAns==false)
+    {
+    cin>>userSelection;
+
+    if(userSelection==1)
+    {
+        validAns=true;
+        MenuOptions();
+    }
+    else if(userSelection==2)
+    {
+     validAns=true;
+
+        exit(0);
+
+    }
+    else
+    {
+        cout<<"Incorrect input! Please choose 1 to go back to the Menu or 2 to Exit the program."<<endl;
+    }
     
 }
+
+
+}//end LoseWeight
 
 
 
