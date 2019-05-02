@@ -34,6 +34,23 @@ class MacroCalcClass
         */
         int CalcFoodCal();
 
+
+        /*
+        Purpose: Calculates the users Calorie Maintenance level based on their weight in pounds.
+        Pre: User provides their weight in pounds to the program.
+        Post: An upper and lower bound for Calories are calculated and then averaged to give the Caloric Maintenance level.
+        */
+        void CalcMaintenance();
+
+         /*
+        Purpose: Gives information to the user on how to effectively lose weight.
+        Pre: *none
+        Post: This menu screen is purely informational and only gives advice for someone to lose weight
+        */
+        void LoseWeight();
+
+
+
 };
 
 #endif
