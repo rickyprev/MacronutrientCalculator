@@ -56,34 +56,36 @@ int MenuOptions(){
     system("clear");
 
     int userSelection;
+    bool validAns=false;
 
-cout<<"1. Calculate Calories in Food item."<<endl;
-cout<<"2. Calculate Maintenance level Calories."<<endl;
-cout<<"3. Information on how to lose weight."<<endl;
-cout<<"4. Information on how to gain weight."<<endl;
-cout<<"5. Exit"<<endl<<endl;
-cout<<"Please select from the list of options above"<<endl;
+    cout<<"1. Calculate Calories in Food item."<<endl;
+    cout<<"2. Calculate Maintenance level Calories."<<endl;
+    cout<<"3. Information on how to lose weight."<<endl;
+    cout<<"4. Information on how to gain weight."<<endl;
+    cout<<"5. Exit"<<endl<<endl;
+    cout<<"Please select from the list of options above"<<endl;
 
-cout<<endl;
-cout<<endl;
-cin>>userSelection; //gets the users choice
+    cout<<endl<<endl;
 
-
-
-switch(userSelection){
-
-case 1:CalcFoodCal();break;
-case 2:CalcMaintenance();break;
-case 3:LoseWeight();break;
-case 4:break;
-case 5:break;
+    cin>>userSelection; //gets the users choice
 
 
+   
+        switch(userSelection){
 
-default:break;
+            case 1:CalcFoodCal();validAns=true;break;
+            case 2:CalcMaintenance();validAns=true;break;
+            case 3:LoseWeight();validAns=true;break;
+            case 4:GainWeight();validAns=true;break;
+            case 5:exit(0);validAns=true;break;
+
+            default:
+            cout<<"Incorrect choice. Please choose from the options on the list 1-5"<<endl;
+            MenuOptions();
+            break;
 
 
-}//end switch
+        }//end switch
 
 
 }//end MenuOptions
@@ -266,6 +268,8 @@ void LoseWeight()
     cout<<"Any weight loss over 1-2 pounds weekly is UNHEALTHY. (*other than the first 2 weeks of exercising because this is just water weight)"<<endl;
     cout<<"Continue to monitor and change what's necessary, decrease calories or increase exercise."<<endl<<endl;
     cout<<"When you decrease Calories, pull from your CARBOHYDRATES first and then small amounts from FAT or PROTEIN but do not drastically reduce any single one!!"<<endl;
+    cout<<"A common trick is to eat a large volume of vegetables to keep full. They are low calorie and can help supress the hunger."<<endl;
+
     cout<<"Remember, losing weight is a marathon, not a sprint. It takes time so find enjoyment in the pursuit and enjoy a healthier lifestyle :)"<<endl<<endl;
 
 
@@ -293,10 +297,60 @@ void LoseWeight()
         cout<<"Incorrect input! Please choose 1 to go back to the Menu or 2 to Exit the program."<<endl;
     }
     
-}
+}//end while
 
 
 }//end LoseWeight
+
+void GainWeight()
+{
+    bool validAns=false;
+    int userSelection=0;
+    system("clear");
+
+    cout<<"If your hear then your probably a 'hard-gainer' or maybe even training for a powerlifting competition."<<endl;
+    cout<<"Both types of individuals need to start by significantly decreasing your amount of cardiovascular activity "<<endl;
+    cout<<"Focus more on weight training. Theoretically, the more you weight, the more weight you should be able to work with."<<endl<<endl;
+
+    cout<<"As far as diet goes, you have 1 of two choice to make. Do I want to gain weight in a healthy manner, or put on loads of weight"<<endl;
+    cout<<"as fast as possible? It is highly recommended to choose the first option, but ultimately, the decision is yours."<<endl;
+    cout<<"Be aware that if you choose to eat lots of whatever you want, you will likely gain body fat fast and this could"<<endl;
+    cout<<"also lead to health problems."<<endl<<endl;
+
+    cout<<"Like with losing weight, you must calculate your caloric maintenance and slightly increase it by 300-400 Calories initially."<<endl;
+
+    cout<<"Continue to monitor and change what's necessary, increase calories only after a week or so of no significant change."<<endl<<endl;
+
+
+
+
+    cout<<"Press 1 to go back to the Menu."<<endl;
+    cout<<"Press 2 to Exit."<<endl;
+
+    while(validAns==false)
+    {
+    cin>>userSelection;
+
+    if(userSelection==1)
+    {
+        validAns=true;
+        MenuOptions();
+    }
+    else if(userSelection==2)
+    {
+     validAns=true;
+
+        exit(0);
+
+    }
+    else
+    {
+        cout<<"Incorrect input! Please choose 1 to go back to the Menu or 2 to Exit the program."<<endl;
+    }
+    
+}//end while
+
+}
 
 
 

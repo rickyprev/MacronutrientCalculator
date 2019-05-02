@@ -49,6 +49,14 @@ class MacroCalcClass
         */
         void LoseWeight();
 
+        /*
+        Purpose: Gives information to the user on how to effectively gain weight.
+        Pre: *none
+        Post: This menu screen is purely informational and only gives advice for someone on how to gain weight
+        */
+        void GainWeight();
+
+
 
 
 };
